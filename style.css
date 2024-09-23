@@ -106,3 +106,51 @@ nav {
 .buttons .btn {
 	width: 49%;
 }
+
+/* Donation */
+
+#donation .card {
+	display: flex;
+	border: 1px solid #526d8260;
+	padding: 20px;
+	border-radius: 15px;
+}
+
+#donation .card .card-body {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	margin-left: 25px;
+}
+#donation .card + .card {
+	margin-top: 30px;
+}
+#donation .card .card-body .card-body__money {
+	display: inline-flex;
+	width: auto;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 12px 20px;
+	border-radius: 10px;
+}
+#donation .card .card-body > * + * {
+	margin-top: 15px;
+}
+#donation .card .card-body .card-body__money span:nth-child(2) {
+	display: inline-block;
+	margin: 0 8px;
+}
+#donation .card .card-body input {
+	border: 0;
+	border-radius: 8px;
+	outline: 0;
+	width: 100%;
+	padding: 10px 20px;
+	color: black;
+	background-color: hsl(215, 33%, 19%);
+	border: 1px solid #526d8260;
+}
+#donation .card .card-body button {
+	width: 100%;
+}
