@@ -1,0 +1,108 @@
+/* bg color #121212
+    accent color #526d82
+    title and texts #9DB2BF
+    subtitle #DDE6ED
+*/
+body {
+	background-color: #27374d;
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	color: #dde6ed;
+	font-family: "Poppins", sans-serif;
+}
+
+/* Common */
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 40px;
+}
+.container-fluid {
+	width: 100%;
+	padding: 20px;
+}
+.bg-light {
+	background-color: hsl(215, 33%, 19%);
+}
+.subtitle {
+	color: #9db2bf;
+}
+.btn {
+	padding: 10px 35px;
+	outline: 0;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.btn-ghost {
+	background-color: transparent;
+	color: #dde6ed;
+	border: 3px solid #526d82;
+}
+.btn-ghost:hover {
+	background-color: #526d82;
+	color: #dde6ed;
+	border: 3px solid #526d82;
+	transition: background-color 200ms ease, color 200ms ease;
+}
+.btn-primary {
+	background-color: #526d82;
+	color: #dde6ed;
+	border: 0;
+}
+.btn-primary:hover {
+	background-color: #dde6ed;
+	color: #526d82;
+	transition: background-color 200ms ease, color 200ms ease;
+}
+.active {
+	background-color: #526d82;
+	color: #dde6ed;
+	border: 0;
+}
+.active:hover {
+	background-color: #526d82;
+	color: #dde6ed;
+	border: 0;
+}
+/* Nav */
+nav {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.logo-text {
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 700;
+	margin-left: 20px;
+}
+.donation-money {
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 600;
+}
+#money {
+	margin: 0 10px;
+}
+.buttons {
+	margin: 0 auto;
+	width: 30%;
+	display: flex;
+	justify-content: space-between;
+}
+.buttons .btn {
+	width: 49%;
+}
