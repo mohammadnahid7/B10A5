@@ -13,6 +13,9 @@ const tabContainer = document.getElementsByClassName("buttons")[0];
 const donationTab = document.getElementById("donation");
 const historyTab = document.getElementById("history");
 
+const modalCloseBtn = document.querySelector(".modal button");
+const modal = document.querySelector(".modal");
+
 function toggleTabVisibility(showTab, hideTab) {
 	hideTab.style.display = "none";
 	showTab.style.display = "block";
@@ -90,6 +93,6 @@ donationTab.addEventListener("click", function (e) {
 		}
 		defaultMoney -= donationAmount;
 		mainMoney.textContent = defaultMoney;
-		console.log(histories);
+		modal.style.display = "flex";
 	}
 });

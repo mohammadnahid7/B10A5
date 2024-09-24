@@ -16,6 +16,9 @@ body {
 input {
 	color: white !important;
 }
+a {
+	text-decoration: none;
+}
 
 /* Common */
 .container {
@@ -187,4 +190,40 @@ section.container {
 	font-weight: 700;
 	color: #9db2bf;
 	font-size: 24px;
+}
+
+/* Modal */
+
+.modal {
+	user-select: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	background-color: #27374dcc;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+.modal .modal-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	padding: 50px;
+	background-color: #9db2bf;
+	border-radius: 15px;
+}
+
+.modal .modal-body h2,
+.modal .modal-body b {
+	color: #27374d;
+}
+
+.modal .modal-body p {
+	margin-bottom: 20px;
+	color: #27374d;
 }
