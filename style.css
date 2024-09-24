@@ -13,6 +13,9 @@ body {
 	color: #dde6ed;
 	font-family: "Poppins", sans-serif;
 }
+input {
+	color: white !important;
+}
 
 /* Common */
 .container {
@@ -69,7 +72,13 @@ body {
 	color: #dde6ed;
 	border: 0;
 }
+
 /* Nav */
+.nav-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
 nav {
 	max-width: 1280px;
 	margin: 0 auto;
@@ -93,12 +102,13 @@ nav {
 	align-items: center;
 	font-size: 18px;
 	font-weight: 600;
+	user-select: none;
 }
 #money {
 	margin: 0 10px;
 }
 .buttons {
-	margin: 0 auto;
+	margin: 30px auto 10px auto;
 	width: 30%;
 	display: flex;
 	justify-content: space-between;
@@ -107,8 +117,11 @@ nav {
 	width: 49%;
 }
 
-/* Donation */
+section.container {
+	margin-top: 150px;
+}
 
+/* Donation */
 #donation .card {
 	display: flex;
 	border: 1px solid #526d8260;
@@ -123,7 +136,8 @@ nav {
 	justify-content: center;
 	margin-left: 25px;
 }
-#donation .card + .card {
+#donation .card + .card,
+#history .card + .card {
 	margin-top: 30px;
 }
 #donation .card .card-body .card-body__money {
@@ -153,4 +167,24 @@ nav {
 }
 #donation .card .card-body button {
 	width: 100%;
+}
+
+/* History */
+#history {
+	display: none;
+	flex-direction: column;
+}
+#history .card {
+	border: 1px solid #526d8260;
+	padding: 20px;
+	border-radius: 15px;
+}
+#history .card span {
+	font-size: 20px;
+	font-weight: 600;
+}
+#history .card span i {
+	font-weight: 700;
+	color: #9db2bf;
+	font-size: 24px;
 }
