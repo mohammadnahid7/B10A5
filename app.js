@@ -23,6 +23,7 @@ function toggleTabVisibility(showTab, hideTab) {
 function amountValidation(value) {
 	value = parseInt(value);
 	if (typeof value === "number" && value > 0) {
+		modal.style.display = "flex";
 		return parseInt(value);
 	} else {
 		alert("Invalid Amount");
@@ -30,9 +31,11 @@ function amountValidation(value) {
 	}
 }
 function generateHistory(amount, place) {
-	const d = new Date();
-	const time = d.toString();
-	histories.push({ amount, time, place });
+	if (amount > 0) {
+		const d = new Date();
+		const time = d.toString();
+		histories.push({ amount, time, place });
+	}
 }
 function displayHistory() {
 	const places = [
@@ -47,8 +50,7 @@ function displayHistory() {
             <div class="card history-item">
                 <span>${currEl.amount} Taka is donated to <i>'${places[currEl.place]}'</i></span>
                 <p>Date: ${currEl.time}</p>
-            </div>
-        `;
+            </div>`;
 	}
 	console.log(totalHtml);
 	historyTab.innerHTML = totalHtml;
@@ -93,6 +95,9 @@ donationTab.addEventListener("click", function (e) {
 		}
 		defaultMoney -= donationAmount;
 		mainMoney.textContent = defaultMoney;
-		modal.style.display = "flex";
+		currentEl.previousElementSibling.value = "";
 	}
+});
+modalCloseBtn.addEventListener("click", function () {
+	modal.style.display = "none";
 });

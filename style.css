@@ -7,7 +7,7 @@ body {
 	background-color: #27374d;
 }
 * {
-	box-sizing: border-box;
+	box-sizing: border-box !important;
 	padding: 0;
 	margin: 0;
 	color: #dde6ed;
@@ -25,6 +25,11 @@ a {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 40px;
+}
+@media only screen and (max-width: 576px) {
+	.container {
+		padding: 10px;
+	}
 }
 .container-fluid {
 	width: 100%;
@@ -81,6 +86,7 @@ a {
 	position: fixed;
 	top: 0;
 	left: 0;
+	width: 100vw;
 }
 nav {
 	max-width: 1280px;
@@ -89,10 +95,30 @@ nav {
 	display: flex;
 	justify-content: space-between;
 }
+@media only screen and (max-width: 576px) {
+	nav {
+		flex-wrap: wrap;
+	}
+}
 .logo {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+@media only screen and (max-width: 576px) {
+	.logo {
+		order: 1;
+		flex-direction: column;
+		width: 100%;
+	}
+	.cta {
+		width: 50%;
+		order: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 15px;
+	}
 }
 .logo-text {
 	display: inline-block;
@@ -100,12 +126,25 @@ nav {
 	font-weight: 700;
 	margin-left: 20px;
 }
+@media only screen and (max-width: 576px) {
+	.logo-text {
+		margin-left: 0;
+	}
+}
 .donation-money {
 	display: flex;
 	align-items: center;
 	font-size: 18px;
 	font-weight: 600;
 	user-select: none;
+}
+@media only screen and (max-width: 576px) {
+	.donation-money {
+		order: 3;
+		justify-content: center;
+		width: 50%;
+		margin-top: 15px;
+	}
 }
 #money {
 	margin: 0 10px;
@@ -119,9 +158,22 @@ nav {
 .buttons .btn {
 	width: 49%;
 }
+@media only screen and (max-width: 576px) {
+	.buttons {
+		width: 100%;
+		margin: 10px auto 0 auto;
+	}
+	.buttons .btn {
+	}
+}
 
 section.container {
 	margin-top: 150px;
+}
+@media only screen and (max-width: 576px) {
+	section.container {
+		margin-top: 280px;
+	}
 }
 
 /* Donation */
@@ -130,6 +182,11 @@ section.container {
 	border: 1px solid #526d8260;
 	padding: 20px;
 	border-radius: 15px;
+}
+@media only screen and (max-width: 576px) {
+	#donation .card {
+		flex-direction: column;
+	}
 }
 
 #donation .card .card-body {
@@ -150,6 +207,14 @@ section.container {
 	align-items: center;
 	padding: 12px 20px;
 	border-radius: 10px;
+}
+@media only screen and (max-width: 576px) {
+	#donation .card .card-body {
+		margin-left: 0;
+	}
+	#donation .card .card-body .card-body__money {
+		margin-top: 20px;
+	}
 }
 #donation .card .card-body > * + * {
 	margin-top: 15px;
@@ -196,7 +261,7 @@ section.container {
 
 .modal {
 	user-select: none;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
@@ -217,7 +282,11 @@ section.container {
 	background-color: #9db2bf;
 	border-radius: 15px;
 }
-
+@media only screen and (max-width: 576px) {
+	.modal .modal-body {
+		width: 80%;
+	}
+}
 .modal .modal-body h2,
 .modal .modal-body b {
 	color: #27374d;
