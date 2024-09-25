@@ -32,11 +32,34 @@
 		</style>
 	</head>
 	<body>
-		<h2>Heading</h2>
+		<h2>What is the Document Object Model (DOM)?</h2>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eius, ullam,
-			dignissimos, ab perspiciatis facilis nostrum voluptatibus rem non accusantium repellat
-			quo deleniti illo minus in laborum itaque consequatur cupiditate?
+			The DOM is a way to represent an HTML or XML document as a structured tree, where each
+			part of the document (like tags, text, and attributes) is an object that can be accessed
+			and changed using JavaScript.
+		</p>
+
+		<h2>How do you select an element from the DOM?</h2>
+		<p>
+			You can select an element using methods like <code>document.getElementById()</code>,
+			<code>document.querySelector()</code>, or
+			<code>document.getElementsByClassName()</code>. These let you pick elements based on
+			their ID, class, or tag.
+		</p>
+
+		<h2>What is event delegation in the context of the DOM, and why is it useful?</h2>
+		<p>
+			Event delegation is when you add an event listener to a parent element instead of each
+			child. It works because events "bubble" up through the DOM. It's useful because it
+			reduces the number of event listeners and simplifies managing dynamic elements.
+		</p>
+
+		<h2>How do you manipulate an element's attributes and styles using the DOM?</h2>
+		<p>
+			You can change an element's attributes using methods like <code>setAttribute()</code> or
+			by directly modifying properties (e.g., <code>element.src</code>). For styles, you can
+			use <code>element.style</code> to change specific CSS properties like
+			<code>backgroundColor</code> or <code>fontSize</code>.
 		</p>
 	</body>
 </html>

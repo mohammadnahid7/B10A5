@@ -7,12 +7,9 @@ const donationAmountObj = {
 const histories = [];
 
 const mainMoney = document.getElementById("money");
-
 const tabContainer = document.getElementsByClassName("buttons")[0];
-
 const donationTab = document.getElementById("donation");
 const historyTab = document.getElementById("history");
-
 const modalCloseBtn = document.querySelector(".modal button");
 const modal = document.querySelector(".modal");
 
@@ -22,7 +19,7 @@ function toggleTabVisibility(showTab, hideTab) {
 }
 function amountValidation(value) {
 	value = parseInt(value);
-	if (typeof value === "number" && value > 0) {
+	if (typeof value === "number" && value > 0 && defaultMoney - value >= 0) {
 		modal.style.display = "flex";
 		return parseInt(value);
 	} else {
@@ -39,16 +36,18 @@ function generateHistory(amount, place) {
 }
 function displayHistory() {
 	const places = [
-		"Donate for Flood at Noakhali, Bangladesh",
-		"Donate for Flood Relief in Feni,Bangladesh",
-		"Aid for Injured in the Quota Movement",
+		"Support Flood Relief Efforts in Noakhali, Bangladesh",
+		"Contribute to Flood Relief in Feni, Bangladesh",
+		"Support for Injured in the Quota Reform Movement",
 	];
 	let totalHtml = "";
 	for (let i = histories.length - 1; i >= 0; i--) {
 		const currEl = histories[i];
 		totalHtml += `
             <div class="card history-item">
-                <span>${currEl.amount} Taka is donated to <i>'${places[currEl.place]}'</i></span>
+                <span>${currEl.amount} Taka is donated to <i>'${places[currEl.place]}'</i></span>${
+			i == histories.length - 1 ? '<span id="latest" class="bg-light">latest</span>' : ""
+		}
                 <p>Date: ${currEl.time}</p>
             </div>`;
 	}
@@ -56,22 +55,21 @@ function displayHistory() {
 	historyTab.innerHTML = totalHtml;
 }
 tabContainer.addEventListener("click", function (event) {
-	if (
-		event.target.className.includes("donation-tab") &&
-		!event.target.className.includes("active")
-	) {
+	const currEl = event.target;
+	if (currEl.className.includes("donation-tab") && !currEl.className.includes("active")) {
 		toggleTabVisibility(donationTab, historyTab);
-		event.target.className += " active";
-		event.target.nextElementSibling.className =
-			event.target.nextElementSibling.className.replace(" active", "");
-	} else if (
-		event.target.className.includes("history-tab") &&
-		!event.target.className.includes("active")
-	) {
+		currEl.className += " active";
+		currEl.nextElementSibling.className = currEl.nextElementSibling.className.replace(
+			" active",
+			""
+		);
+	} else if (currEl.className.includes("history-tab") && !currEl.className.includes("active")) {
 		toggleTabVisibility(historyTab, donationTab);
-		event.target.className += " active";
-		event.target.previousElementSibling.className =
-			event.target.previousElementSibling.className.replace(" active", "");
+		currEl.className += " active";
+		currEl.previousElementSibling.className = currEl.previousElementSibling.className.replace(
+			" active",
+			""
+		);
 		displayHistory();
 	}
 });
